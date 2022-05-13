@@ -1,0 +1,12 @@
+
+public class SogutucuAc implements ISogutucu{
+	IEkran ekran;
+	@Override
+	public void mesaj() {
+		ekran.mesajGoruntule("Sogutucu Aciliyor ...");
+
+		ekran.mesajGoruntule("--------------------------------");
+
+        ekran.mesajGoruntule("Sogutucu acildi ...\n");
+	}
+}

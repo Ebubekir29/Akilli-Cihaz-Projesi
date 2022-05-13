@@ -1,0 +1,47 @@
+
+public class MerkeziIslemBirimi implements Observer {
+    boolean sogutucuDurum = false;
+    SicaklikAlgilayici algila = new SicaklikAlgilayici();
+    Eyleyici eyleyici = new Eyleyici();
+
+    public void sogutucuAc()
+    {
+        if(sogutucuDurum == false)
+        {
+        	sogutucuDurum = eyleyici.sogutucuAc(this);
+        	algila.sicaklikDusur(true);
+            System.out.println("Sogutucu Acildi.\n");
+        }
+        else
+            sogutucuAcikUyariMesaji();
+    }
+
+    public void sogutucuKapat()
+    {
+        if(sogutucuDurum == true)
+        {
+        	sogutucuDurum = eyleyici.sogutucuKapat(this);
+        	algila.sicaklikYukselt(false);
+            System.out.println("Sogutucu Kapatildi.");
+        }
+        else
+            sogutucuKapaliUyariMesaji();
+    }
+
+    public void sicaklikGoster()
+    {
+        System.out.println("Sicaklik = " + algila.sicaklikOku());
+    }
+
+    @Override
+    public void sogutucuKapaliUyariMesaji()
+    {
+        System.out.println("Sogutucu kapali kapatma islemi yapilamiyor.");
+    }
+
+    @Override
+    public void sogutucuAcikUyariMesaji()
+    {
+        System.out.println("Sogutucu acik oldugundan dolayi islem gerceklestirilemedi.Lutfen tekrar deneyiniz.");
+    }
+}

@@ -1,0 +1,8 @@
+import java.util.*;
+public class Menu {
+	 System.out.println("1-Sogutucu Ac");
+     System.out.println("2-Sogutucu Kapat ");
+     System.out.println("3-Sicaklik Goruntule");
+     System.out.println("4-Cikis Yap");
+     
+}

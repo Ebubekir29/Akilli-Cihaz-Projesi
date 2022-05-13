@@ -1,0 +1,11 @@
+
+public class Ekran {
+	 public void mesajGoruntule(String mesaj) 
+	    {
+	        System.out.println(mesaj);
+	    }
+
+	    public void ekranTemizle() 
+	    {
+	    }
+}

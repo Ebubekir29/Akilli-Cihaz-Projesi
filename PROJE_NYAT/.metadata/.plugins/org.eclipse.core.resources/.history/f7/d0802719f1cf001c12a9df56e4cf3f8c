@@ -1,0 +1,7 @@
+
+public class SogutucuKapat implements ISogutucu{
+	Ekran ekran = new Ekran();
+	public void sogutucu() {
+		ekran.mesajGoruntule("Sogutucu kapatildi.");
+	}
+}

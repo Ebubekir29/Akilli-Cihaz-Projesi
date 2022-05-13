@@ -1,0 +1,34 @@
+
+public abstract class MerkeziIslemBirimi implements IObserver,IMerkeziIslemBirimi {
+	IObserver obs;
+	Ekran ekran = new Ekran();
+    boolean sogutucuDurum = false;
+    SicaklikAlgilayici algila = new SicaklikAlgilayici();
+    Eyleyici eyleyici = new Eyleyici();
+    public void sogutucuAc()
+    {
+        if(sogutucuDurum == false)
+        {
+        	sogutucuDurum = eyleyici.sogutucuAc(this);
+        	algila.sicaklikDusur(true);
+        }
+        else
+        	obs.hataMesajiAcik();
+    }
+
+    public void sogutucuKapat()
+    {
+        if(sogutucuDurum == true)
+        {
+        	sogutucuDurum = eyleyici.sogutucuKapat(this);
+        	algila.sicaklikYukselt(false);
+        }
+        else
+        	obs.hataMesajiKapali();
+    }
+    
+    public void sicaklikGoster()
+    {
+    	 ekran.mesajGoruntule("Sicaklik = " + algila.sicaklikDegeri());
+    }
+}

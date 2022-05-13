@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Kullanici {
+	Scanner scan = new Scanner(System.in);
+	IEkran ekran;
+	
+ public void kullaniciOlustur()
+ {
+	 ekran.mesajGoruntule("Kullanici Adinizi Giriniz : \n ");
+     String ad = scan.next();
+     ekran.mesajGoruntule("Sifrenizi Giriniz : ");
+     String sifre = scan.next();
+ }
+}

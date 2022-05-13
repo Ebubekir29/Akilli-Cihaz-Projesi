@@ -1,0 +1,12 @@
+
+public class Factory {
+	public void MesajGonder(int sicaklik)
+	{
+		PostgreSql postgreSql=new PostgreSql();
+		
+		java.sql.Connection connect=null;
+		connect=postgreSql.Baglan();
+		
+		postgreSql.mesajGonder(sicaklik, connect);
+	}
+}

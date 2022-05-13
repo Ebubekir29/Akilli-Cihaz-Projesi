@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class AgArayuzu {
+	  public void basla()
+	    {
+	        Scanner scan = new Scanner(System.in);
+	        String KullaniciAdi;
+	        String Sifre;
+	        MerkeziIslemBirimi akilliCihaz = new MerkeziIslemBirimi();
+	        while(true)
+	        {
+	            System.out.print("Kullanici Adinizi Giriniz : ");
+	            KullaniciAdi = scan.next();
+	            System.out.print("Sifrenizi Giriniz : ");
+	            Sifre = scan.next();
+	            if(PostgreSql.getInstance().Kontrol(KullaniciAdi , Sifre))
+	                break;
+	            else
+	                System.out.println("Hatali Giris Yaptiniz.");
+	        }
+	        byte secim;
+	    do {
+	    	 Scanner scan1 = new Scanner(System.in);
+	            System.out.println("1-Sogutucu Ac");
+	            System.out.println("2-Sogutucu Kapat ");
+	            System.out.println("3-Sicaklik Goruntule");
+	            System.out.println("4-Cikis Yap");
+	            secim = scan1.nextByte();
+	    }while(!((secim==1)||(secim==2)||(secim==3)||(secim==4)));
+	           
+	            if(secim == 1)
+	            {
+	                akilliCihaz.sogutucuAc();
+	            }
+	            if(secim == 2)
+	            {
+	                akilliCihaz.sogutucuKapat();
+	            }
+	            if(secim == 3)
+	            {
+	                akilliCihaz.sicaklikGoster();
+	            }
+	            if(secim == 4)
+	            {
+	                System.exit(1);
+	            }
+
+	        
+	    }
+}

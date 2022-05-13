@@ -1,0 +1,13 @@
+
+public class Eyleyici implements Observable,IEyleylici{
+	  public boolean sogutucuAc(Observer obs)
+	    {
+	        return true;
+	       
+	    }
+
+	    public boolean sogutucuKapat(Observer obs)
+	    {
+	        return false;
+	    }
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\monster\OneDrive\Masaüstü\PROJE_NYAT\.metadata\.plugins\org.eclipse.jdt.core
+2186068444.index
+1651790580.index
+1167275426.index
+1865797976.index

@@ -1,0 +1,5 @@
+
+public interface Observer {
+    boolean sogutucuAc(Observer observer);
+    boolean sogutucuKapat(Observer observer);
+}

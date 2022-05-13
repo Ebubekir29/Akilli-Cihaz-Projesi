@@ -1,0 +1,4 @@
+
+public interface IAgArayuzu {
+	void basla() throws IllegalAccessException, InstantiationException;
+}

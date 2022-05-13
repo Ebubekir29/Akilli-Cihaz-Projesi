@@ -1,0 +1,11 @@
+
+public class Uygulama {
+
+	public static void main(String[] args) throws IllegalAccessException, InstantiationException {
+		SogutucuAc asus = (SogutucuAc) SogutucuFactory.sogutucuOlustur(SogutucuAc.class);
+		  AgArayuzu arayuz = new AgArayuzu();
+	        arayuz.basla();
+	        asus.mesaj();
+	}
+
+}

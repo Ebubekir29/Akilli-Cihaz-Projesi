@@ -1,0 +1,48 @@
+
+public class MerkeziIslemBirimi implements Observer{
+
+    boolean sogutucuAcikKapali = false;
+    SicaklikAlgilayici algilayici = new SicaklikAlgilayici();
+    Eyleyici eyleyici = new Eyleyici();
+
+    public void sogutucuAc()
+    {
+        if(sogutucuAcikKapali == false)
+        {
+            sogutucuAcikKapali = eyleyici.sogutucuAc(this);
+            algilayici.sicaklikDusurYukselt(true);
+            System.out.println("Soğutucu Açıldı.");
+        }
+        else
+            sogutucuAcikUyariMesaji();
+    }
+
+    public void sogutucuKapat()
+    {
+        if(sogutucuAcikKapali == true)
+        {
+            sogutucuAcikKapali = eyleyici.sogutucuKapat(this);
+            algilayici.sicaklikDusurYukselt(false);
+            System.out.println("Soğutucu Kapatıldı.");
+        }
+        else
+            sogutucuKapaliUyariMesaji();
+    }
+
+    public void sicaklikGoster()
+    {
+        System.out.println("Sıcaklık = " + algilayici.sicaklikOku());
+    }
+
+    @Override
+    public void sogutucuKapaliUyariMesaji()
+    {
+        System.out.println("Soğutucu kapalı kapatma işlemi yapılamıyor.");
+    }
+
+    @Override
+    public void sogutucuAcikUyariMesaji()
+    {
+        System.out.println("Soğutucu açık açma işlemi yapılamıyor.");
+    }
+}

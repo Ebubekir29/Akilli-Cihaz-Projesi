@@ -1,0 +1,5 @@
+
+public interface IEyleylici {
+	boolean sogutucuAc(Observer obs);
+	boolean sogutucuKapat(Observer obs);
+}

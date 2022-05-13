@@ -1,0 +1,4 @@
+
+public interface IVeriTabaniSurucu {
+	boolean kontrol(String KullaniciAdi , String Sifre);
+}

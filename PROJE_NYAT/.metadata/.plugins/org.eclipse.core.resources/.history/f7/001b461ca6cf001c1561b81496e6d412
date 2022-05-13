@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class AgArayuzu {
+	public void basla()
+    {
+		IEkran ekran = null;
+        Scanner scan = new Scanner(System.in);
+        String ad;
+        String sifre;
+        MerkeziIslemBirimi sogutucu = new MerkeziIslemBirimi();
+        while(true)
+        {
+            ekran.mesajGoruntule("Kullanici Adinizi Giriniz : \n ");
+            ad = scan.next();
+            System.out.print("Sifrenizi Giriniz :\n ");
+            sifre = scan.next();
+            if(PostgreSql.getInstance().kontrol(ad , sifre))
+                break;
+            else
+                System.out.println("Kullanici adi veya sifreniz hatalidir. Tekrar deneyiniz.\n");
+        }
+        byte secim;
+        System.out.println("--------------------------");
+        while(true) 
+        {
+    do {
+    	 Scanner scan1 = new Scanner(System.in);
+            System.out.println("1-Sogutucu Ac");
+            System.out.println("2-Sogutucu Kapat ");
+            System.out.println("3-Sicaklik Goruntule");
+            System.out.println("4-Cikis Yap");
+            System.out.println("--------------------------");
+            secim = scan1.nextByte();
+    }while(!((secim==1)||(secim==2)||(secim==3)||(secim==4)));
+           switch(secim)
+           {
+           case 1: sogutucu.sogutucuAc();
+           break;
+           case 2: sogutucu.sogutucuKapat();
+           break;
+           case 3: sogutucu.sicaklikGoster();
+           break;
+           case 4: System.exit(1);
+           break;
+           default :
+        	   System.out.println("Hatali tuslama yaptiniz.");
+           }
+        }  	
+    }
+}
